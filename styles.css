@@ -1,0 +1,55 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    overflow: hidden;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.message-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+}
+
+.message {
+    animation: blink 0.8s infinite alternate;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3vw;
+    text-shadow: 0 0 10px currentColor;
+    transform: rotate(var(--rot));
+    opacity: 0.9;
+}
+
+@keyframes blink {
+    0% {
+        color: #ff0000;
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        color: #00ff00;
+        filter: hue-rotate(90deg);
+    }
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+    .message {
+        font-size: 6vw;
+    }
+}
